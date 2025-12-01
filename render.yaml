@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: fixfleet-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://your-frontend-domain.netlify.app
+      # Add these if you have them:
+      # - key: GOOGLE_CLIENT_ID
+      #   value: your-google-client-id
+      # - key: GOOGLE_CLIENT_SECRET
+      #   value: your-google-client-secret
+      # - key: FACEBOOK_APP_ID
+      #   value: your-facebook-app-id
+      # - key: FACEBOOK_APP_SECRET
+      #   value: your-facebook-app-secret
